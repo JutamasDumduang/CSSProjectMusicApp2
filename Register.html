@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="image/music.png">
+    <title>Music App | Sign Up</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-info navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+						<span class="sr-only">Menu</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="Home.html"><i class="fa fa-music" aria-hidden="true"> Music App</i></a>
+					</div>
+					<div class="collapse navbar-collapse" id="app-navbar-collapse">
+						<ul class="nav navbar-nav"></ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="Login.html">Login</a></li>
+							<li><a href="Register.html">Register</a></li>
+							<li><a href="Contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+    <div class="container">
+          <div class="row">
+              <legend>
+                  <h1><center>Music App member system<br></center></h1></legend>
+              <div class="col-md-8 col-md-offset-2">
+                  <div id="err" style="display:none" class="alert alert-danger alert-dismissable fade in">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+                      <strong>Incorrect! : </strong>
+                      <span style="color:blue;font-weight:bold" id="summary">
+                        Your form contains tons of errors! Please try again.</span>
+                  </div>
+                  <div id="suc" style="display:none" class="alert alert-success alert-dismissable fade in">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+                      <strong>Regist Successful!</strong>
+                  </div>
+                  <div class="panel panel-info">
+                      <div class="panel-heading">Register to the system</div>
+                      <div class="panel-body">
+                          <form id="signupForm" class="form-horizontal" action="" method="POST" role="form">
+                              <div class="form-group">
+                                  <label for="username" class="col-md-4 control-label">Username</label>
+                                  <div class="col-md-6">
+                                      <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" maxlength="20" autofocus>
+                                      <span></span>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="password" class="col-md-4 control-label">Password</label>
+                                  <div class="col-md-6">
+                                      <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" maxlength="20">
+                                      <span></span>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="con_password" class="col-md-4 control-label">Confirm Password</label>
+                                  <div class="col-md-6">
+                                      <input type="password" class="form-control" id="con_password" name="con_password" placeholder="Enter your password again" maxlength="20">
+                                      <span></span>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="fname" class="col-md-4 control-label">First name</label>
+                                  <div class="col-md-6">
+                                      <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter your firstname">
+                                      <span></span>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="lname" class="col-md-4 control-label">Last name</label>
+                                  <div class="col-md-6">
+                                      <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter your lastname">
+                                      <span></span>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                                  <div class="col-md-6">
+                                      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your e-mail">
+                                      <span></span>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="tel" class="col-md-4 control-label">Telephone</label>
+                                  <div class="col-md-6">
+                                      <input type="text" class="form-control" id="tel" name="tel" maxlength="10" placeholder="Enter your telephone number">
+                                      <span></span>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="col-md-8 col-md-offset-4">
+                                      <a href="#">
+                                          <button type="submit" id="signup" name="button" class="btn btn-info">
+                                            Register</button>
+                                      </a>
+                                      <a href="#"><button type="reset" class="btn btn-info">Clear</button></a>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                      <div class="panel-footer panel-heading"></div>
+                  </div>
+                  <div class="col-sm-6">
+                      <span>Back to</span>&nbsp;
+                      <a href="Login.html"><button type="button" class="btn btn-info">Login</button></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/cache.js"></script>
+    <script type="text/javascript" src="js/loader.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/Register.js"></script>
+  </body>
+</html>

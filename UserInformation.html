@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="image/music.png">
+    <title>Music App | User Information</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-info navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+						<span class="sr-only">Menu</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="Home.html"><i class="fa fa-music" aria-hidden="true"> Music App</i></a>
+					</div>
+					<div class="collapse navbar-collapse" id="app-navbar-collapse">
+						<ul class="nav navbar-nav"></ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="Login.html">Login</a></li>
+							<li><a href="Register.html">Register</a></li>
+							<li><a href="Contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+      <div class="container">
+            <div class="row">
+                <legend>
+                    <h1><center>Music App member system<br></center></h1></legend>
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">User Information</div>
+                        <div class="panel-body">
+                          <div class="panel-body">
+                            <form class="" action="#" method="post">
+                              <div class="form-group">
+                                <label for="username">Username</label>
+                                <p class="form-control-static" id="username" placeholder=""></p>
+                              </div>
+                              <div class="form-group">
+                                <label for="password">Password</label>
+                                <p class="form-control-static" id="password" placeholder=""></p>
+                              </div>
+                              <div class="form-group">
+                                <label for="fname">First name</label>
+                                <p class="form-control-static" id="fname" placeholder=""></p>
+                              </div>
+                              <div class="form-group">
+                                <label for="lname">Last name</label>
+                                <p class="form-control-static" id="lname" placeholder=""></p>
+                              </div>
+                              <div class="form-group">
+                                <label for="email">Email</label>
+                                <p class="form-control-static" id="email" placeholder=""></p>
+                              </div>
+                              <div class="form-group">
+                                <label for="tel">Telephone</label>
+                                <p class="form-control-static" id="tel" placeholder=""></p>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="panel-footer panel-heading"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="button" id="edit" name="button" class="btn btn-info">Edit</button>
+                    </div><br><br>
+                </div>
+            </div>
+        </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        //Function for extract parameters from querystring
+        $.urlParam = function(name){
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            return results[1] || 0;
+        }
+        $(function(){
+            //Get user Id from querystring parameters
+            var id = $.urlParam('id');
+            //Create a Web Api url for getting a member info
+            var url = "http://membershipwebapi977290.azurewebsites.net/api/Members/" + id;
+            console.log(url);
+            $.get(url, function(data, status) {
+                console.log(data);
+                $('#username').html(data.UserName);
+                $('#password').html(data.Password);
+                $('#fname').html(data.FirstName);
+                $('#lname').html(data.LastName);
+                $('#email').html(data.Email);
+                $('#tel').html(data.Tel);
+                //If user click edit, go to edituser page
+                $("#edit").click(function () {
+                    window.location.href = "Edit.html?id=" + data.Id;
+                });
+            });
+        });
+    </script>
+  </body>
+</html>

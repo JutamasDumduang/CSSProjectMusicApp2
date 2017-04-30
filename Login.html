@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="image/music.png">
+    <title>Music App | Sign In</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-info navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+						<span class="sr-only">Menu</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="Home.html"><i class="fa fa-music" aria-hidden="true"> Music App</i></a>
+					</div>
+					<div class="collapse navbar-collapse" id="app-navbar-collapse">
+						<ul class="nav navbar-nav"></ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="Login.html">Login</a></li>
+							<li><a href="Register.html">Register</a></li>
+							<li><a href="Contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+    <div class="container">
+          <div class="row">
+              <legend>
+                  <h1><center>Music App member system<br></center></h1></legend>
+              <div class="col-md-8 col-md-offset-2">
+                  <div id="err" style="display:none" class="alert alert-danger alert-dismissable fade in">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+                      <strong>Incorrect!</strong>
+                      <span style="color:blue;font-weight:bold" id="summary">
+                        Your login form contains some errors! Please try again.</span>
+                  </div>
+                  <div id="suc" style="display:none" class="alert alert-success alert-dismissable fade in">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+                      <strong>Regist successful!</strong>
+                  </div>
+                  <div class="panel panel-info">
+                      <div class="panel-heading">Login to the system</div>
+                      <div class="panel-body">
+                        <div class="panel-body">
+                            <form id="form" class="form-horizontal" action="" method="POST" role="form">
+                                <div class="form-group">
+                                    <label for="username" class="col-md-4 control-label">Username</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" maxlength="12" autofocus>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-md-4 control-label">Password</label>
+                                    <div class="col-md-6">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" maxlength="12">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <div class="checkbox">
+                                            <a href="#"><button type="submit" id="signin" name="button" onclick="create()" class="btn btn-info">Sign In</button></a>
+                                            <label><input type="checkbox" name="remember"> Remember Me</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                      </div>
+                      <div class="panel-footer panel-heading"></div>
+                  </div>
+                  <div class="col-sm-6">
+                      <a href="Register.html"><button type="button" class="btn btn-info">Sign up for Music App</button></a>
+                  </div><br><br>
+              </div>
+          </div>
+      </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/cache.js"></script>
+    <script type="text/javascript" src="js/loader.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/Login.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        function create() {
+            $.cookie('keep', 'user data');
+            console.log($.cookie('keep'));
+        }
+    </script>
+  </body>
+</html>
